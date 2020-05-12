@@ -36,23 +36,43 @@
 
 #include "api.h"
 
-/**
- * You should add more #includes here
- */
+
 //#include "okapi/api.hpp"
 //#include "pros/api_legacy.h"
 
-/**
- * If you find doing pros::Motor() to be tedious and you'd prefer just to do
- * Motor, you can use the namespace with the following commented out line.
- *
- * IMPORTANT: Only the okapi or pros namespace may be used, not both
- * concurrently! The okapi namespace will export all symbols inside the pros
- * namespace.
- */
-// using namespace pros;
+
+ using namespace pros;
 // using namespace pros::literals;
 // using namespace okapi;
+//Controllers
+extern Controller master;
+
+//Motors
+///Intakes
+extern Motor intakeFL;
+extern Motor intakeFR;
+extern Motor intake;
+///Drive
+extern Motor driveFR;
+extern Motor driveFL;
+extern Motor driveBR;
+extern Motor driveBL;
+
+
+//ADI
+///Sensors
+extern ADILineSensor intakeSensor;
+extern ADIUltrasonic backR;
+extern ADIUltrasonic backL;
+
+
+
+/*
+WIRING ADIUltrasonic:
+port_ping	the port connected to the orange OUTPUT cable. This should be in port 1, 3, 5, or 7 (‘A’, ‘C’, ‘E’, ‘G’).
+port_echo	the port connected to the yellow INPUT cable. This should be in the next highest port following port_ping.
+
+*/
 
 /**
  * Prototypes for the competition control tasks are redefined here to ensure
