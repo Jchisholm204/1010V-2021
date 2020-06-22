@@ -1,0 +1,23 @@
+#ifndef _LCD_H_
+#define _LCD_H_
+#include "main.h"
+#include <stdio.h>
+#include <errno.h>
+
+
+#define NO_AUTO_SELECTED 0
+int SelectedAuto;
+
+class Display{
+public:
+  void createTabs(void);
+  void setActiveTab(int tab);
+  void createScreen(void);
+  void createOpLEDs(void);
+  void createTitle(void);
+  void createAutoSelector(void);
+  void createBatteryMeter(void);
+  void refresh(void);
+};
+
+#endif
