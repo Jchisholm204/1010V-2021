@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include "display.h"
+#include "chassis.h"
 //Device initialize
 ///Controller
 Controller master(CONTROLLER_MASTER);
@@ -13,14 +14,15 @@ ADILineSensor intakeSensor('a');
 ADIUltrasonic backR ('3', '4');
 ADIUltrasonic backL ('5', '6');
 
-
-
+Chassis drivef;
+Display cinema;
 void initialize() {
 	driveLF.set_brake_mode(E_MOTOR_BRAKE_BRAKE);
 	driveLB.set_brake_mode(E_MOTOR_BRAKE_BRAKE);
 	driveRF.set_brake_mode(E_MOTOR_BRAKE_BRAKE);
 	driveRB.set_brake_mode(E_MOTOR_BRAKE_BRAKE);
-
+	cinema.createScreen();
+	cinema.refresh();
 }
 
 void disabled() {}
@@ -35,7 +37,8 @@ void opcontrol() {
 
 
 	while (true) {
-
+		drivef.operator_Chassis();
+		cinema.refresh();
 		pros::delay(20);
 	}
 }
