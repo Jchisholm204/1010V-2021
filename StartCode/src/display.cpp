@@ -81,5 +81,4 @@ void Display::createScreen(void)
     createOpLEDs();
     createAutoSelector();
     createTitle();
-    createTabs();
 }

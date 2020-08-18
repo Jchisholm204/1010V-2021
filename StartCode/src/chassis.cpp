@@ -17,17 +17,22 @@ void Chassis::operator_Chassis(void){
 	int Z1 = exponential(master.get_analog(E_CONTROLLER_ANALOG_LEFT_X), 1.5 /*DriveExp*/, 8 /*JoyDead*/, 15 /*MotorMin*/);
 	//int E2 = exponential(partner.get_analog(E_CONTROLLER_ANALOG_LEFT_X), 1.5 /*DriveExp*/, 8 /*JoyDead*/, 15 /*MotorMin*/);
 	//Expo drive outputs
-	driveFL.move( Y1 + X1 + Z1 );  //map LF to left y, right X
-	driveBL.move( Y1 + X1  - Z1 );  //map LB to left y, right X
-	driveFR.move( Y1 - X1 - Z1 );  //map RF to left y, right X
-	driveBR.move( Y1 - X1 + Z1 );  //map RB to left y, right X
+	int FL = ( Y1 + X1 + Z1 );  //map LF to left y, right X
+	int BL = ( Y1 + X1 - Z1 );  //map LB to left y, right X
+	int FR = ( Y1 - X1 - Z1 );  //map RF to left y, right X
+	int BR = ( Y1 - X1 + Z1 );  //map RB to left y, right X
+	//Motor Outputs
+	driveBL.move(BL);
+	driveFL.move(FL);
+	driveBR.move(BR);
+	driveFR.move(FL);
 }
 void Chassis::stopDriving(void){
 	//all drive motors stop
 	driveBL.move(0);
 	driveFL.move(0);
 	driveBR.move(0);
-	driveBR.move(0);
+	driveFR.move(0);
 }
 void Chassis::timeDrive(int time, int velocity){
 	//drive motors move velocity [Green = 200rpm min/max]

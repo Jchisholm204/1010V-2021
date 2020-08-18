@@ -16,6 +16,9 @@ ADIUltrasonic backL ('5', '6');
 
 Chassis drivef;
 Display cinema;
+
+int SelectedAuto;
+
 void initialize() {
 	driveLF.set_brake_mode(E_MOTOR_BRAKE_BRAKE);
 	driveLB.set_brake_mode(E_MOTOR_BRAKE_BRAKE);

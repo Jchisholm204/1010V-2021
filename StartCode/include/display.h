@@ -6,11 +6,10 @@
 
 
 #define NO_AUTO_SELECTED 0
-int SelectedAuto;
+extern int SelectedAuto;
 
 class Display{
 public:
-  void createTabs(void);
   void setActiveTab(int tab);
   void createScreen(void);
   void createOpLEDs(void);
