@@ -5,10 +5,10 @@
 ///Controller
 Controller master(CONTROLLER_MASTER);
 ///DRIVE
-Motor driveLF(1/*Port*/, E_MOTOR_GEARSET_18/*Gearset(red/blue/green)*/, false/*motor reversed?*/, E_MOTOR_ENCODER_DEGREES/*set encoder units to be used*/);
-Motor driveLB(2, E_MOTOR_GEARSET_18, false, E_MOTOR_ENCODER_DEGREES);
-Motor driveRF(3, E_MOTOR_GEARSET_18, true, E_MOTOR_ENCODER_DEGREES);
-Motor driveRB(4, E_MOTOR_GEARSET_18, true, E_MOTOR_ENCODER_DEGREES);
+Motor driveLF(13/*Port*/, E_MOTOR_GEARSET_18/*Gearset(red/blue/green)*/, false/*motor reversed?*/, E_MOTOR_ENCODER_DEGREES/*set encoder units to be used*/);
+Motor driveLB(3, E_MOTOR_GEARSET_18, false, E_MOTOR_ENCODER_DEGREES);
+Motor driveRF(12, E_MOTOR_GEARSET_18, true, E_MOTOR_ENCODER_DEGREES);
+Motor driveRB(2, E_MOTOR_GEARSET_18, true, E_MOTOR_ENCODER_DEGREES);
 ///ADI
 ADILineSensor intakeSensor('a');
 ADIUltrasonic backR ('3', '4');
