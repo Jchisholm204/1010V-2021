@@ -50,9 +50,17 @@
  * concurrently! The okapi namespace will export all symbols inside the pros
  * namespace.
  */
-// using namespace pros;
+using namespace pros;
 // using namespace pros::literals;
 // using namespace okapi;
+
+extern Controller master;
+
+extern Motor right_drive;
+extern Motor left_drive;
+extern Motor right_drive_2;
+extern Motor left_drive_2;
+
 
 /**
  * Prototypes for the competition control tasks are redefined here to ensure
