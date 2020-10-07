@@ -143,17 +143,17 @@ void Chassis::MoveDistance(int direction, int targetValue, int timeout){
 void Chassis::MoveSlow(int direction, int targetValue, int timeout){
   float driveKP = 1.2;
   float driveKD = 0.8;
-  int motorPower; //motor power level
-  int startTime = millis(); //Elapsed time since start of the sequence
-  int currentValue = 0; //starting value of 0
-  int turn_err = 0; //error value init
-  int derr = 0;//error difference
-  int err_last = 0; //last error
-  int err_sum = 0; //sum of errors
-  float KI = 0; //KI value - not currently used'
-  float p; //p value normally 0.8
-  float i = 0; //I value
-  float d; //d value normally 0.7
+  int motorPower;
+  int startTime = millis();
+  int currentValue = 0;
+  int turn_err = 0;
+  int derr = 0;
+  int err_last = 0;
+  int err_sum = 0;
+  float KI = 0;
+  float p;
+  float i = 0;
+  float d; 
   driveBR.tare_position();
   driveBL.tare_position();
   while((millis() - startTime) < timeout){
@@ -165,10 +165,10 @@ void Chassis::MoveSlow(int direction, int targetValue, int timeout){
     err_sum += turn_err;
     d = driveKD * derr;
 
-    motorPower = p+i+d; //motorpower is the sum of p, i, and d
+    motorPower = p+i+d;
 
-    if(motorPower > 70){motorPower = 70;} //if the motor power is greater than 127 (the maximun it can go), set it to 127
-    if(motorPower < -70){motorPower = -70;}//if the motor power is less than -127 (the minimum it can go), set it to -127
+    if(motorPower > 70){motorPower = 70;}
+    if(motorPower < -70){motorPower = -70;}
 
       driveFL.move(direction*motorPower);
       driveBL.move((direction*motorPower));
